@@ -60,3 +60,19 @@ Ensure you have **Node.js** installed on your system.
 2. Install the necessary server packages by running: `npm install`
 3. Start the application by running: `npm start`
 4. Open your browser and navigate to `http://localhost:3000` (or the port specified in your terminal).
+
+
+
+
+---
+
+## 📝 Technical Report & Conclusion
+
+### Assumptions & Limitations
+* **Assumptions:** Context switching time is assumed to be negligible (0 units) for this simulation. 
+* **Limitations:** The simulator relies on user-provided static inputs and does not simulate dynamic memory or I/O interrupts.
+
+### Final Analysis: Fairness vs. Efficiency
+Based on the test scenarios, **Shortest Job First (SJF)** proved to be highly efficient at minimizing average Waiting Time and Turnaround Time by clearing out quick tasks first. However, this creates a significant starvation risk for longer jobs. 
+
+Conversely, **Round Robin (RR)** enforces fairness by utilizing a time quantum (q = 4). While this slightly increases the overall average waiting time due to frequent context switching, it guarantees a much faster **first response time** for all processes and ensures that long jobs are not indefinitely delayed by a stream of short tasks.
